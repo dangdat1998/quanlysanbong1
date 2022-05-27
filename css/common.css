@@ -1,0 +1,87 @@
+body, button, select, input {font-family:Arial;font-size:15px;}
+input[type='submit'], button {cursor:pointer!important;font-weight:bold;}
+button:hover{background:#ccc;}
+.mytable {border-spacing:0;}
+.mytable td, .mytable th {border-left:1px solid #000;border-bottom:1px solid #000;padding:5px;}
+.mytable th {border-top: 1px solid #000;background:#ccc;}
+.mytable th:last-child{border-right: 1px solid #000;}
+.mytable td:last-child{border-right: 1px solid #000;}
+.mytable tr:nth-child(2n + 1) {background:#eee;}
+.table .thead-listdatsan{
+    border-bottom: solid grey;
+}
+
+.table .tbody-listdatsan{
+    border: inset ;
+}
+
+.table .tbody-listdatsan tr:nth-child(2n + 1) {
+    background-color:#cbffc5;
+}
+
+.table .tfood-listdatsan{
+    border-top: solid grey;
+}
+
+.nav{text-decoration:none;color:#000;font-weight:bold;}
+.nav:hover{color:orange;}
+.disabled{opacity:.5;pointer-events: none;}
+.thongbao{color:red;font-style:italic;font-weight:bold;}
+
+#registerForm .register-btn,#loginForm .login-btn{
+    text-align: center;
+}
+
+#loginForm h2, #registerForm h2{
+    text-align: center;
+}
+
+#registerForm{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    height: 470px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #ddd;
+	background-image:linear-gradient(to right top,#b6ffbc, #0ad219,#b6ffbc,#2bd038) ;
+
+}
+
+#registerForm .reg-login{
+    font-size: 16px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#registerForm .reg-login a{
+    text-decoration: none!important;
+}
+
+#loginForm{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    height: 330px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #ddd;
+	background-image:linear-gradient(to right top,#b6ffbc, #0ad219,#b6ffbc,#2bd038) ;
+
+}
+
+#loginForm .no-account{
+    font-size: 12px;
+    text-align: right;
+}
+

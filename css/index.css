@@ -1,0 +1,164 @@
+/* Chung */
+body{
+	background: url("https://thuvienvector.com/upload/images/items/phong-nen-san-bong-da-san-van-dong-file-psd-2052.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.display-none{
+	display: none;
+}
+
+.container{
+	background-color: white!important;
+	z-index: 1;	
+}
+
+.cont{
+	padding: 50px 0 50px 0;
+	background-color: white!important;
+	z-index: 1;	
+}
+/* CSS Carosel */
+.slider{
+	width: 100%!important;
+	background-color: rgb(215, 215, 215)!important;
+}
+
+.carousel-item {
+	height: 450px;
+	width: auto;
+	
+}
+
+.carousel-item img{
+	height: 450px;
+	width: auto;
+}
+
+.carosel-diachi{
+	color: rgb(31, 7, 153)!important;
+	font-weight: bold;
+}
+
+
+/* CSS header */
+.header1{
+	background-image:linear-gradient(to right, #0d9518,#00bc0e,#21c92d,#bdffc2,#41fb4f,#00bc0e,white)  ;
+}
+
+.header1 .nav-item{
+	font-size: 20px;
+	color: white;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+
+.header1 .nav-item a:hover{
+	color:white!important;
+}
+
+.header-cont{
+	padding-left: 12%!important;
+	padding-right: 12%!important;
+}
+
+.logo{
+	width: auto;
+	height: 60px;
+	margin-left: -80px;
+}
+
+/* CSS Page Trang chủ */
+.trangchu .page-name{
+	font-size: 45px;
+	text-align: center;
+	color: black;
+}
+
+.carousel .carousel-datsan button{
+	background-color: rgba(80, 248, 46, 0.4);
+	color: white;
+}
+
+/* CSS Page đặt sân */
+.page-datsan h1{
+	font-size: 30px;
+}
+
+.page-datsan .date{
+	text-align: center;
+	padding-right: 40%!important;
+	padding-left: 40%!important;
+}
+
+.ngaydatsan{
+	text-align: center;
+}
+
+.datsan-block{
+	padding-top: 30px;
+}
+
+.time-table-block,.list-table-block{
+	border: inset;
+}
+
+.title-list{
+	font-size: 20px;
+	text-align: center;
+}
+
+.ngay-list{
+	text-align: right;
+	margin-right: 10%;
+}
+
+.list-datsan {
+	width: 25%;
+	display: inline-block;
+
+}
+
+.tbody-listdatsan .btn-xoa{
+	color: red!important;
+}
+
+.tbody-listdatsan .btn-xoa:hover{
+	background-image:linear-gradient(to right, red,#fa8f24,red) ;
+	color: white!important;
+}
+
+.tbody-listdatsan .btn-thanhtoan{
+	color: black!important;
+}
+
+.tbody-listdatsan .btn-thanhtoan:hover{
+	background-image:linear-gradient(to right, #0ad219,#60ff6c,#0ad219) ;
+	color: white!important;
+}
+
+
+.image-list-sb{
+	height: auto;
+	width: 100%;
+	padding: 5px;
+}
+
+.list-sb-item{
+	text-align: center;
+}
+
+.btn-san{
+	display: flex;
+	justify-content: space-around;
+}
+
+.btnDoiten ,.btnXoa{
+	background-color: #9bf79b;
+}
+#tieudetime,#tieudeds{
+	color: red;
+}
