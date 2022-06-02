@@ -5,6 +5,10 @@
 
 <?php
 	include("session.php");
+	if ($rs['chucvu'] == 0) {
+		header("location:index.php");
+		die();
+	}
 	include("header.php");
 ?>
 <div class="container cont">

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 01:56 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 02, 2022 lúc 05:55 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `quanlysanbong`
+-- Cơ sở dữ liệu: `quanlysanbong`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dat_san`
+-- Cấu trúc bảng cho bảng `dat_san`
 --
 
 CREATE TABLE `dat_san` (
@@ -39,7 +38,7 @@ CREATE TABLE `dat_san` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `dat_san`
+-- Đang đổ dữ liệu cho bảng `dat_san`
 --
 
 INSERT INTO `dat_san` (`id`, `ma_kh`, `ma_san`, `bat_dau`, `ket_thuc`, `da_thanh_toan`, `don_gia`) VALUES
@@ -47,12 +46,36 @@ INSERT INTO `dat_san` (`id`, `ma_kh`, `ma_san`, `bat_dau`, `ket_thuc`, `da_thanh
 (254, 3, 22, '2022-05-24 07:00:00', '2022-05-24 09:00:00', 1, 3000),
 (255, 3, 21, '2022-05-24 10:00:00', '2022-05-24 12:00:00', 0, 3000),
 (256, 3, 21, '2022-05-24 12:15:00', '2022-05-24 14:00:00', 0, 3000),
-(257, 3, 24, '2022-05-24 20:00:00', '2022-05-24 22:30:00', 0, 8000);
+(257, 3, 24, '2022-05-24 20:00:00', '2022-05-24 22:30:00', 0, 8000),
+(260, 4, 20, '2022-06-02 05:00:00', '2022-06-02 05:15:00', 1, 3000),
+(261, 4, 20, '2022-06-02 05:30:00', '2022-06-02 05:45:00', 0, 3000),
+(262, 1, 20, '2022-06-02 06:00:00', '2022-06-02 06:15:00', 0, 3000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `san_bong`
+-- Cấu trúc bảng cho bảng `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `username` varchar(225) CHARACTER SET utf8 NOT NULL,
+  `content` longtext CHARACTER SET utf8 NOT NULL,
+  `time` varchar(255) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `post`
+--
+
+INSERT INTO `post` (`id`, `username`, `content`, `time`) VALUES
+(1, 'quynh', 'this is my test post', '1654185231'),
+(2, 'quynh', 'this is my test post', '1654185232');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `san_bong`
 --
 
 CREATE TABLE `san_bong` (
@@ -61,7 +84,7 @@ CREATE TABLE `san_bong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `san_bong`
+-- Đang đổ dữ liệu cho bảng `san_bong`
 --
 
 INSERT INTO `san_bong` (`id`, `ten`) VALUES
@@ -77,7 +100,7 @@ INSERT INTO `san_bong` (`id`, `ten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tai_khoan`
+-- Cấu trúc bảng cho bảng `tai_khoan`
 --
 
 CREATE TABLE `tai_khoan` (
@@ -91,7 +114,7 @@ CREATE TABLE `tai_khoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `tai_khoan`
+-- Đang đổ dữ liệu cho bảng `tai_khoan`
 --
 
 INSERT INTO `tai_khoan` (`id`, `ten`, `sdt`, `username`, `password`, `chucvu`, `time`) VALUES
@@ -100,14 +123,16 @@ INSERT INTO `tai_khoan` (`id`, `ten`, `sdt`, `username`, `password`, `chucvu`, `
 (4, 'Minh Tuấn', '0199292000', 'duc', '123456', '0', '1653311761'),
 (5, 'Hoàng Minh Đức', '0199292020', 'duc1', '123456', '0', '1653311821'),
 (6, 'Nguyễn Tiến Anh', '01655938742', 'tienanh', '123456', '0', '1653324835'),
-(7, 'Trần Trung Hiếu', '0355000009', 'trunghieu', '123456', '0', '1653326723');
+(7, 'Trần Trung Hiếu', '0355000009', 'trunghieu', '123456', '0', '1653326723'),
+(8, 'a b c', '09888', 'amdudh', '123456', '0', '1654102363'),
+(9, 'quynh', '0101910', 'quynh1909', '123456', '0', '1654102714');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `dat_san`
+-- Chỉ mục cho bảng `dat_san`
 --
 ALTER TABLE `dat_san`
   ADD PRIMARY KEY (`id`),
@@ -115,45 +140,57 @@ ALTER TABLE `dat_san`
   ADD KEY `dat_san_ibfk_2` (`ma_san`);
 
 --
--- Indexes for table `san_bong`
+-- Chỉ mục cho bảng `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `san_bong`
 --
 ALTER TABLE `san_bong`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tai_khoan`
+-- Chỉ mục cho bảng `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `dat_san`
+-- AUTO_INCREMENT cho bảng `dat_san`
 --
 ALTER TABLE `dat_san`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
 
 --
--- AUTO_INCREMENT for table `san_bong`
+-- AUTO_INCREMENT cho bảng `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `san_bong`
 --
 ALTER TABLE `san_bong`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `tai_khoan`
+-- AUTO_INCREMENT cho bảng `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `dat_san`
+-- Các ràng buộc cho bảng `dat_san`
 --
 ALTER TABLE `dat_san`
   ADD CONSTRAINT `dat_san_ibfk_2` FOREIGN KEY (`ma_san`) REFERENCES `san_bong` (`id`);

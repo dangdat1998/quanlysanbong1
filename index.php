@@ -24,14 +24,31 @@
 			</div>
 		</div>
 		<br/>
+		<?php 
+			if ($rs['chucvu'] == 1) {
+				echo '<div class="datsan-block">
+				<div class="title-list"><b>DANH SÁCH ĐẶT SÂN </div> <div class="ngay-list">NGÀY <span id="tieudeds"></span></b></div><br />
+				<div class="list-table-block">
+					<div class="container" id="ds_datsan"></div><br />
+				</div>
+			<div>
+			<br />';
+			}
+		?>
+		<?php 
+			if ($rs['chucvu'] == 0) {
+				echo '<div class="datsan-block">
+				<div class="title-list"><b>SÂN ĐÃ ĐẶT THEO NGÀY</div> <div class="ngay-list">NGÀY <span id="tieudeds_khach"></span></b></div><br />
+				<div class="list-table-block">
+					<div class="container" id="ds_datsan_khach"></div><br />
+				
+				</div>
+			<div>
+			<br />';
+			}
+		?>
 
-		<div class="datsan-block">
-			<div class="title-list"><b>DANH SÁCH ĐẶT SÂN </div> <div class="ngay-list">NGÀY <span id='tieudeds'></span></b></div><br />
-			<div class="list-table-block">
-				<div class="container" id='ds_datsan'></div><br />
-			</div>
-		<div>
-		<br />
+		
 		
 		<style>
 			#formDatSan {
@@ -44,7 +61,8 @@
 		</style>
 		<?php
 		$sql = "SELECT * FROM tai_khoan WHERE username = '".$_SESSION['login_user']."'";
-			$rs = mysqli_fetch_assoc(mysqli_query($db, $sql));
+		$rs = mysqli_fetch_assoc(mysqli_query($db, $sql));
+			
 		?>
 		<div id='grayscreen'></div>
 		<div id='formDatSan'>
@@ -159,11 +177,16 @@
 			</table>
 		</div>
 </div>
-<div class="datsan-block">
-	<div class="title-list"><b>SƠ ĐỒ SÂN BÓNG</b></div><br />
+<?php 
+	if ($rs['chucvu'] == 1) {
+		echo '<div class="datsan-block">
+			<div class="title-list"><b>SƠ ĐỒ SÂN BÓNG</b></div><br />
 
-	<div id="viewsanbong"></div>
-</div>
+			<div id="viewsanbong"></div>
+		</div>';
+	}
+?>
+
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -171,6 +194,7 @@
 $(document).ready(function() {
 	
 	xemDsDatSan(getToday());
+	xemDsDatSanKhach(getToday());
 
 	$("#datsan_batdau_gio").on("input", function(){
         // Print entered value in a div box
@@ -210,6 +234,7 @@ $(document).ready(function() {
 		maxYear: parseInt(moment().format('YYYY'), 10)
 	}, function(start, end, label) {
 		xemDsDatSan(start.format("YYYY-MM-DD"));
+		xemDsDatSanKhach(start.format("YYYY-MM-DD"));
 	});
 	
 	
@@ -264,6 +289,7 @@ $(document).ready(function() {
 					thongbaotot(msg);
 				}
 				xemDsDatSan(getCurrentFormattedDate());
+				xemDsDatSanKhach(getCurrentFormattedDate());
 			},
 			error: function() {
 				thongbaoloi("Lỗi hệ thống!!");
